@@ -90,7 +90,7 @@ function Home() {
             </li>
             {students &&
               students.map((student, index) => (
-                <Link to={`students/${student.id}`}>
+                <Link to={`students/${student.id}`} onClick={(e)=>e.stopPropagation()}>
                 <li className="flex border p-3" key={index}>
                   <span className="w-1/12">{index + 1}</span>
                   <span className="w-2/12">{student.name}</span>

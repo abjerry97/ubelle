@@ -28,14 +28,19 @@ function PreviewStudent() {
 
         const { id, name, nin, image, state, regNo, program, Certification } =
           response.data.data;
-        setUserDetails({
-          regNo,
-          name,
-          nin,
-          stateOfOrigin: state,
-          progOfStudy: program,
-          img: image,
-          cert: Certification,
+
+        alert(JSON.stringify(response.data.data));
+        setUserDetails((user) => {
+          return {
+            ...user,
+            regNo,
+            name,
+            nin,
+            stateOfOrigin: state,
+            progOfStudy: program,
+            img: image,
+            cert: Certification,
+          };
         });
         setLoading(false);
       } catch (error) {
