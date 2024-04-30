@@ -24,7 +24,7 @@ function PreviewStudent() {
     const fetchStudents = async () => {
       try {
         setLoading(true);
-        const response = await makeRequest.get(`${studentId}`);
+        const response = await makeRequest.get(`/students/${studentId}`);
 
         const { id, name, nin, image, state, regNo, program, Certification } =
           response.data.data;
@@ -66,7 +66,7 @@ function PreviewStudent() {
               {userDetails.img ? (
                 <img
                   alt="user"
-                  src={`${process.env.BASE_URL}/${userDetails.img}`}
+                  src={`/${userDetails.img}`}
                   width={200}
                   className="border-2 border-blue-300 rounded-xl mx-auto mb-8"
                 />
